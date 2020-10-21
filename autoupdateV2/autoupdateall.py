@@ -74,11 +74,11 @@ while go =="Y":
         price = (a[10])[8:]
         today = date.today()
         D = today.strftime("%d/%m/%y")
-        connection = psycopg2.connect(user="postgres",
-                                    password="1234",
-                                    host="127.0.0.1",
-                                    port="5432",
-                                    database="pythonlogin")
+        connection = psycopg2.connect(user="webadmin",
+                                password="BFCqhr46914", 
+                                host="node4943-env-2254395.th.app.ruk-com.cloud", 
+                                port="5432", 
+                                database="pythonlogin")
         cursor = connection.cursor()
         postgres_insert_query = """ INSERT INTO MoneyTHAPI (D_M_Y,open_price, high_price, low_price,now_price) VALUES (%s,%s,%s,%s,%s)"""
         cursor.execute(postgres_insert_query,(now,open_price,top_price,low_price,now_price))
